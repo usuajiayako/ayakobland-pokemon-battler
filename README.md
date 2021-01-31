@@ -1,6 +1,6 @@
 ## Ayako's pokemon battler
 
-This is a Pokemon battle game using JavaScript. You can register as a trainer and choose your first pokemon and battle with another pokemon. I have implemented upto where you can register as a trainer and choose the first pokemon of your choice.
+This is a Pokemon battle game using JavaScript. You can register as a trainer and choose your first pokemon and battle with another pokemon. I have implemented upto where you can register as a trainer and choose the first pokemon of your choice and battle with a pokemon.
 
 ## How to play?
 
