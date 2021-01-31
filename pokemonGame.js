@@ -43,6 +43,11 @@ const secondQuestions = [
   },
 ];
 
+let pokemon1;
+let trainer1;
+let pokemon2;
+let trainer2;
+
 function playGame() {
   inquirer
     .prompt(firstQuestions)
@@ -58,26 +63,32 @@ function playGame() {
       if (damageChoice === 'B') damage = 20;
       if (damageChoice === 'C') damage = 30;
 
-      const pokemon1 = new Pokemon(name, damage, sound, move, type);
-      const trainer1 = new Trainer(firstAnswers.trainerName);
+      pokemon1 = new Pokemon(name, damage, sound, move, type);
+      trainer1 = new Trainer(firstAnswers.trainerName);
       trainer1.catch(pokemon1)
 
-      const pokemon2 = new Pokemon('Alomomola', 10, 'Alooooooo', 'round-fin-slap', 'water')
-      const trainer2 = new Trainer('Ayako')
+      pokemon2 = new Pokemon('Alomomola', 10, 'Alooooooo', 'round-fin-slap', 'water')
+      trainer2 = new Trainer('Ayako')
       trainer2.catch(pokemon2)
-      // console.log(pokemon1, trainer1)
-      // console.log(pokemon2, trainer2)
 
       console.log("---------------------------------------------------")
       console.log(`Hello, ${trainer1.name}!! Let's battle with other pokemons with your ${pokemon1.name}!!`)
       console.log(`Your Data -> name: ${trainer1.name}`)
       console.log(`Your Pokemon Data -> name: ${pokemon1.name}, health: ${pokemon1.health}, damage: ${pokemon1.damage}, type: ${pokemon1.type}`)
       console.log("---------------------------------------------------")
+
       return inquirer.prompt(secondQuestions);
     })
 
     .then((secondAnswers) => {
-      console.log(secondAnswers)
+      if (secondAnswers.battle === "Yes") {
+        console.log
+        const battle1 = new Battle(trainer1, trainer2)
+        setTimeout(wait, 1000);
+        function wait() {
+          battle1.fight(pokemon1, pokemon2)
+        }
+      }
     })
   
 }

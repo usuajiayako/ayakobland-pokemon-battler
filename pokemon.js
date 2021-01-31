@@ -51,18 +51,20 @@ class Battle{
     this.trainer2.storage = pokemon2;
     let pokemon1RemainingHealth = pokemon1.health
     let pokemon2RemainingHealth = pokemon2.health
-    console.log(pokemon1RemainingHealth, pokemon2RemainingHealth)
+    console.log("---------------------------------------------------")
+    console.log(`${pokemon1.name}'s remaining health: ${pokemon1RemainingHealth} | ${pokemon2.name}'s remaining health: ${pokemon2RemainingHealth}`)
+    console.log("---------------------------------------------------")
 
       if (pokemon1RemainingHealth > 0) {
         if (pokemon2.type === pokemon1.strength) {
           pokemon2RemainingHealth = pokemon2RemainingHealth - (pokemon1.damage * 1.25);
-          console.log('super effective')
+          console.log(`${pokemon1.name}'s attack --> super effective!!`)
         } else if (pokemon2.type === pokemon1.weakness) {
           pokemon2RemainingHealth = pokemon2RemainingHealth - (pokemon1.damage * 0.75);
-          console.log('not very effective')
+          console.log(`${pokemon1.name}'s attack --> not very effective :(`)
         } else {
           pokemon2RemainingHealth = pokemon2RemainingHealth - pokemon1.damage;
-          console.log('effective')
+          console.log(`${pokemon1.name}'s attack --> effective!`)
         }
       } else {
         console.log(`${pokemon2.name} wins!`) 
@@ -71,18 +73,20 @@ class Battle{
       if (pokemon2RemainingHealth > 0) {
         if (pokemon1.type === pokemon2.strength) {
           pokemon1RemainingHealth = pokemon1RemainingHealth - (pokemon2.damage * 1.25);
-          console.log('super effective')
+          console.log(`${pokemon2.name}'s attack --> super effective!!`)
         } else if (pokemon1.type === pokemon2.weakness) {
           pokemon1RemainingHealth = pokemon1RemainingHealth - (pokemon2.damage * 0.75);
-          console.log('not very effective')
+          console.log(`${pokemon2.name}'s attack --> not very effective :(`)
         } else {
           pokemon1RemainingHealth = pokemon1RemainingHealth - pokemon2.damage;
-          console.log('effective')
+          console.log(`${pokemon2.name}'s attack --> effective!`)
         }
       } else {
         console.log(`${pokemon1.name} wins!`)
      }
-     console.log(pokemon1RemainingHealth, pokemon2RemainingHealth)
+     console.log("---------------------------------------------------")
+    console.log(`${pokemon1.name}'s remaining health: ${pokemon1RemainingHealth} | ${pokemon2.name}'s remaining health: ${pokemon2RemainingHealth}`)
+    console.log("---------------------------------------------------")
     }
    }
 
